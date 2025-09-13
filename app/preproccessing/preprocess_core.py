@@ -3,7 +3,14 @@ from data_loader import load_data
 
 # Conversion of data types for optimization
 def convert_dtypes(df):
+    # Conversion of category feature from str to category
     df["category"] = df["category"].astype('category')
+
+    # Conversion of hashtags feature from str to list of tags
+    df["hashtags"] = df["hashtags"].apply(
+        lambda x: [tag.strip() for tag in x.split(',') if tag.strip()]
+        if pd.notna(x) else []    
+    )
 
     return df
 
@@ -19,3 +26,5 @@ def preprocessor():
     
     df = convert_dtypes(df)
     df = feature_engineering(df)
+
+    return df
