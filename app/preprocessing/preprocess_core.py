@@ -1,5 +1,5 @@
 import pandas as pd
-from data_loader import load_data
+from .data_loader import load_data
 import streamlit as st
 
 # Conversion of data types for optimization
