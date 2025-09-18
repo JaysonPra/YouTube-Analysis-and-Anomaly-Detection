@@ -41,7 +41,7 @@ with cols["content"]:
     st.markdown("# YouTube Anomaly Detection")
     for _, row in page_data.iterrows():
         with st.container():
-            st.markdown(f"#### [{row['title']}]({row['url']})")  # Smaller title
+            st.markdown(f"#### [{row['title']}]({row['url']})")
             st.markdown(
                 f"**Views**: {row['views']:,}  |  "
                 f"**Likes**: {row['likes']:,}  |  "
